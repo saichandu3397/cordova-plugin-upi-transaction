@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-upi-intent"
+    version="1.0.0">
+    <name>UPI intent plugin</name>
+    <description>UPI intent plugin</description>
+    <license></license>
+    <keywords>cordova</keywords>
+    <!-- android config -->
+      <js-module src="www/UpiTransaction.js" name="UpiTransaction">
+        <clobbers target="cordova.plugin.upiIntent" />
+      </js-module>
+    <platform name="android">
+         <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="UpiIntent">
+                <param name="android-package" value="com.medplus.UpiIntent"/>
+            </feature>
+        </config-file>
+      <source-file src="src/android/com/medplus/UpiIntent.java" target-dir="src/com/medplus/" />
+    </platform>
+</plugin>
